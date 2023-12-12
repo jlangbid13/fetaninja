@@ -1,78 +1,91 @@
-/* google font */
+/* Google Font */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;800&family=VT323&display=swap');
 
-/* layout */
+/* Layout */
 :root {
-  --primary: rgb(36, 178, 116);
+  --primary: #089add;
   --error: #e7195a;
-  --choices: rgb(36, 131, 178);
 }
+
 body {
-  background: #f1f1f1;
   margin: 0;
-  font-family: "Poppins";
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: #c2d6e1;
 }
+
+
 header {
   background: #fff;
+  padding: 10px 0;
 }
+
 header .container {
   max-width: 1400px;
   margin: 0 auto;
-  padding: 10px 20px;
+  padding: 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
+
 header a {
-  color: #333;
+  color: var(--primary);
   text-decoration: none;
 }
-.pages{
+
+.pages {
   max-width: 1400px;
   padding: 20px;
   margin: 0 auto;
 }
 
-/* homepage */
+/* Homepage */
 .home {
   display: grid;
-  grid-template-columns: 3fr 1fr;
-  gap: 100px;
+  grid-template-columns: 3fr 3fr;
+  gap: 10px;
 }
-.schedule-detail {
+
+.order-details {
   background: #fff;
+  border: 1px solid #ddd;
   border-radius: 4px;
   margin: 20px auto;
   padding: 20px;
   position: relative;
-  box-shadow: 2px 2px 5px rgba(0,0,0,0.05);
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
 }
-.schedule-detail h4 {
+
+.order-details h4 {
   margin: 0 0 10px 0;
   font-size: 1.2em;
   color: var(--primary);
 }
-.schedule-detail p {
+
+.order-details p {
   margin: 0;
   font-size: 0.9em;
-  color: #555;
+  color: #333;
 }
-.schedule-detail span {
+
+.order-details span {
   position: absolute;
   top: 20px;
   right: 20px;
   cursor: pointer;
-  background: #f1f1f1;
+  background: #89b0c2;
   padding: 6px;
   border-radius: 50%;
-  color: #333;
+  color: var(--primary);
 }
 
-
-/* schedule form */
+/* New Workout Form */
 label, input {
   display: block;
 }
+
 input {
   padding: 10px;
   margin-top: 10px;
@@ -82,54 +95,15 @@ input {
   border-radius: 4px;
   box-sizing: border-box;
 }
-form {
-  /* Add some spacing below the time input */
-  margin-bottom: 20px;
-}
-
-form label {
-  display: block;
-  margin-bottom: 8px;
-}
-
-form select,
-form input[type="text"] {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  margin-bottom: 10px; /* Add some spacing between form elements */
-}
 
 form button {
   background: var(--primary);
   border: 0;
   color: #fff;
   padding: 10px;
-  font-family: "Poppins";
+  font-family: "Poppins", sans-serif;
   border-radius: 4px;
   cursor: pointer;
-  margin: 5px;
-}
-
-.day-buttons button,
-.time-buttons button {
-  margin: 5px; /* This adds 5 pixels of spacing on all sides of each button */
-  /* ... your other styles ... */
-  background: var(--choices);
-  border: 0;
-  color: #ffffff;
-  padding: 10px;
-  font-family: "Poppins";
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-button.reserved, button:disabled {
-  background-color: #ccc;
-  color: #666;
-  border: 1px solid #aaa;
-  pointer-events: none; /* Ensures the button is not clickable */
 }
 
 div.error {
@@ -140,6 +114,89 @@ div.error {
   border-radius: 4px;
   margin: 20px 0;
 }
+
+/* Style for selected service option */
+button.selected {
+  background: var(--primary);
+  color: #b4d3e9;
+  border: 2px solid var(--primary); /* Add border in primary color to the selected button */
+  transition: background-color 0.2s, color 0.2s, border 0.2s;
+  pointer-events: none;
+}
+
+/* Style for unselected buttons */
+button {
+  background: #f0f0f0;
+  color: var(--primary);
+  border: 2px solid transparent;
+  transition: background-color 0.2s, color 0.2s, border 0.2s;
+  margin-right: 10px;
+}
+
+/* Hover effect for unselected buttons */
+button:not(.selected):hover {
+  background: var(--primary);
+  color: #b4d3e9;
+}
+
 input.error {
   border: 1px solid var(--error);
+}
+
+@media screen and (min-width: 768px) {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  ul {
+    list-style: none;
+    font-weight: 900;
+  }
+
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+      monospace;
+  }
+
+  section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh;
+  }
+
+  .secondary-section {
+    background: #0f1a41;
+  }
+
+  section h2 {
+    font-size: 5rem;
+    margin-bottom: 2rem;
+  }
+
+  .NavBar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 50vh;
+    background-color: #152238;
+  }
+
+  .NavBar h2 {
+    font-size: 5rem;
+    margin-bottom: 2rem;
+  }
 }

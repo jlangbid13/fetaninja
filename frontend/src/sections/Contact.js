@@ -1,5 +1,5 @@
 import { useNav } from "../hooks/useNav"
-import style from '../styles/Body.css'
+import '../styles/ninja.css';
 import React from "react"
 const Contact = () => {
   const bookingRef = useNav("Contact")
