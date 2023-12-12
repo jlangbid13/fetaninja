@@ -14,7 +14,7 @@ const Services = () => {
         <h1>Book now</h1>
         <h3>and breeze through your visit!</h3>
         <p>Experience a new level of laundry convenience - where your time and comfort come first.</p>
-        <Link to="/Home"> {/* Link to the "Booking" component */}
+        <Link to="/login"> {/* Link to the "Booking" component */}
           <button className="reserve-button">
             Reserve Now
           </button>
